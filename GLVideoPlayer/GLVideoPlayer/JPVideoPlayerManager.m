@@ -264,6 +264,9 @@ static NSString * const JPVideoPlayerSDKVersionKey = @"com.jpvideoplayer.sdk.ver
     if (!url) {
         return nil;
     }
+    if (url.query) {
+        url = [[NSURL alloc] initWithScheme:url.scheme host:url.host path:url.path];
+    }
     return [url absoluteString];
 }
 
