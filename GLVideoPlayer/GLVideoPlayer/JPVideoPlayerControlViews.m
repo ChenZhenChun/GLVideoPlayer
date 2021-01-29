@@ -934,7 +934,7 @@ static const NSTimeInterval kJPControlViewAutoHiddenTimeInterval = 5;
     self.controlContainerView.frame = self.bounds;
     self.progressContainerView.frame = self.bounds;
     self.bufferingIndicatorContainerView.frame = self.bounds;
-    self.userInteractionContainerView.frame = CGRectMake(0,50, self.bounds.size.width, self.bounds.size.height - kJPVideoPlayerControlBarHeight-50);
+    self.userInteractionContainerView.frame = CGRectMake(0,50+[[UIApplication sharedApplication] statusBarFrame].size.height, self.bounds.size.width, self.bounds.size.height - kJPVideoPlayerControlBarHeight-50-[[UIApplication sharedApplication] statusBarFrame].size.height);
     [self layoutContainerSubviewsWithBounds:CGRectZero center:CGPointZero  frame:frame];
     [self callLayoutMethodForContainerSubviews];
 }
@@ -950,9 +950,9 @@ static const NSTimeInterval kJPControlViewAutoHiddenTimeInterval = 5;
     self.progressContainerView.frame = self.videoContainerView.frame;
     self.bufferingIndicatorContainerView.frame = self.videoContainerView.frame;
     self.userInteractionContainerView.frame = CGRectMake(self.userInteractionContainerView.center.x - bounds.size.width * 0.5,
-            self.userInteractionContainerView.center.y - bounds.size.height * 0.5+50,
+            self.userInteractionContainerView.center.y - bounds.size.height * 0.5+50+[[UIApplication sharedApplication] statusBarFrame].size.height,
             bounds.size.width,
-            bounds.size.height - kJPVideoPlayerControlBarHeight-50);
+            bounds.size.height - kJPVideoPlayerControlBarHeight-50-[[UIApplication sharedApplication] statusBarFrame].size.height);
     [self layoutContainerSubviewsWithBounds:bounds center:CGPointZero frame:CGRectZero];
     [self callLayoutMethodForContainerSubviews];
 }
@@ -968,9 +968,9 @@ static const NSTimeInterval kJPControlViewAutoHiddenTimeInterval = 5;
     self.progressContainerView.frame = self.videoContainerView.frame;
     self.bufferingIndicatorContainerView.frame = self.videoContainerView.frame;
     self.userInteractionContainerView.frame = CGRectMake(center.y -  self.userInteractionContainerView.bounds.size.width * 0.5,
-            center.x -  self.userInteractionContainerView.bounds.size.height * 0.5+50,
+            center.x -  self.userInteractionContainerView.bounds.size.height * 0.5+50+[[UIApplication sharedApplication] statusBarFrame].size.height,
             self.userInteractionContainerView.bounds.size.width,
-            self.userInteractionContainerView.bounds.size.height - kJPVideoPlayerControlBarHeight-50);
+            self.userInteractionContainerView.bounds.size.height - kJPVideoPlayerControlBarHeight-50-[[UIApplication sharedApplication] statusBarFrame].size.height);
     [self layoutContainerSubviewsWithBounds:CGRectZero center:center frame:CGRectZero];
     [self callLayoutMethodForContainerSubviews];
 }
