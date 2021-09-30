@@ -60,7 +60,7 @@
     if (_cover&&[_cover containsString:@"/"]) {
         [self sd_setImageWithURL:[NSURL URLWithString:_cover] placeholderImage:nil options:SDWebImageAllowInvalidSSLCertificates|SDWebImageLowPriority];
     }else {
-        self.image = [UIImage imageNamed:_cover inBundle:[NSBundle bundleForClass:self.class] compatibleWithTraitCollection:nil];
+        self.image = [UIImage imageNamed:_cover];
     }
 }
 
@@ -69,7 +69,7 @@
     _videoPlayView = [UIButton buttonWithType:UIButtonTypeCustom];
     _videoPlayView.backgroundColor = [UIColor clearColor];
     _videoPlayView.frame = self.bounds;
-    [_videoPlayView setImage:[UIImage imageNamed:@"playIcon_video" inBundle:[NSBundle bundleForClass:self.class] compatibleWithTraitCollection:nil] forState:UIControlStateNormal];
+    [_videoPlayView setImage:[UIImage imageNamed:@"playIcon_video"] forState:UIControlStateNormal];
     [_videoPlayView addTarget:self action:@selector(playVideo) forControlEvents:UIControlEventTouchUpInside];
     return _videoPlayView;
 }

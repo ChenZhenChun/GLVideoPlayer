@@ -157,8 +157,8 @@ nearestViewControllerInViewTree:(UIViewController *_Nullable)nearestViewControll
 
     self.dragSlider = ({
         UISlider *view = [UISlider new];
-        [view setThumbImage:[UIImage imageNamed:@"jp_videoplayer_progress_handler_normal" inBundle:[NSBundle bundleForClass:self.class] compatibleWithTraitCollection:nil] forState:UIControlStateNormal];
-        [view setThumbImage:[UIImage imageNamed:@"jp_videoplayer_progress_handler_hightlight" inBundle:[NSBundle bundleForClass:self.class] compatibleWithTraitCollection:nil] forState:UIControlStateHighlighted];
+        [view setThumbImage:[UIImage imageNamed:@"jp_videoplayer_progress_handler_normal"] forState:UIControlStateNormal];
+        [view setThumbImage:[UIImage imageNamed:@"jp_videoplayer_progress_handler_hightlight"] forState:UIControlStateHighlighted];
         view.maximumTrackTintColor = [UIColor clearColor];
         [view addTarget:self action:@selector(dragSliderDidDrag:) forControlEvents:UIControlEventValueChanged];
         [view addTarget:self action:@selector(dragSliderDidStart:) forControlEvents:UIControlEventTouchDown];
@@ -428,8 +428,8 @@ nearestViewControllerInViewTree:(UIViewController *_Nullable)nearestViewControll
 
     self.playButton = ({
         UIButton *button = [UIButton new];
-        [button setImage:[UIImage imageNamed:@"jp_videoplayer_pause" inBundle:[NSBundle bundleForClass:self.class] compatibleWithTraitCollection:nil] forState:UIControlStateNormal];
-        [button setImage:[UIImage imageNamed:@"jp_videoplayer_play" inBundle:[NSBundle bundleForClass:self.class] compatibleWithTraitCollection:nil] forState:UIControlStateSelected];
+        [button setImage:[UIImage imageNamed:@"jp_videoplayer_pause"] forState:UIControlStateNormal];
+        [button setImage:[UIImage imageNamed:@"jp_videoplayer_play"] forState:UIControlStateSelected];
         [button addTarget:self action:@selector(playButtonDidClick:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:button];
 
@@ -456,8 +456,8 @@ nearestViewControllerInViewTree:(UIViewController *_Nullable)nearestViewControll
 
     self.landscapeButton = ({
         UIButton *button = [UIButton new];
-        [button setImage:[UIImage imageNamed:@"jp_videoplayer_landscape" inBundle:[NSBundle bundleForClass:self.class] compatibleWithTraitCollection:nil] forState:UIControlStateNormal];
-        [button setImage:[UIImage imageNamed:@"jp_videoplayer_portrait" inBundle:[NSBundle bundleForClass:self.class] compatibleWithTraitCollection:nil] forState:UIControlStateSelected];
+        [button setImage:[UIImage imageNamed:@"jp_videoplayer_landscape"] forState:UIControlStateNormal];
+        [button setImage:[UIImage imageNamed:@"jp_videoplayer_portrait"] forState:UIControlStateSelected];
         [button addTarget:self action:@selector(landscapeButtonDidClick:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:button];
 
@@ -597,7 +597,7 @@ nearestViewControllerInViewTree:(UIViewController *_Nullable)nearestViewControll
         UIImageView *view = [UIImageView new];
         UIImage *blurImage = self.blurImage;
         if(!blurImage){
-            blurImage = [UIImage imageNamed:@"jp_videoplayer_blur" inBundle:[NSBundle bundleForClass:self.class] compatibleWithTraitCollection:nil];
+            blurImage = [UIImage imageNamed:@"jp_videoplayer_blur"];
         }
         view.image = blurImage;
         [self addSubview:view];
